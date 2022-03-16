@@ -1,65 +1,67 @@
 <template>
-    <div class="text-center">
-        <h1 class="mb-1 text-xl text-center">Digite sua cidade</h1>
-        <h1 class="mb-2 text-lg text-center">Para mais informações:</h1>
-      <input id="txtName" @keyup.enter="addMessage" v-model="txtInput" type="text" class="px-5 py-1 border rounded bg-darkest hover:border-escuro border-dark">
-    </div>
+<div class="text-center">
+    <h1 class="mb-1 text-xl text-center">Digite sua cidade</h1>
+        <h1 class="mb-3 text-lg text-center">Para lista com informações:</h1>
+    <input id="txtName" @keyup.enter="addMessage" v-model="txtInput" type="text" class="px-5 py-1 border rounded bg-darkest hover:border-escuro border-dark">
+</div>
 
-  <div class="p-2">
+<div class="p-2">
       <div class="w-auto h-auto p-5 rounded-lg shadow-md bg-dark">
         <div class="mb-4 text-lg text-center text-semibold">
-        <div class="ml-4">
-          <h3>
-          {{ name }}
-           -
-          {{region}}
-          </h3>
+            <div class="ml-4">
+                <h3>
+                {{ name }}
+                      -
+                {{region}}
+                </h3>
+             </div>
         </div>
-</div>
 
-    <div class="flex flex-wrap justify-center">
-      <div id='caixinhas'>
-         <h2>Vento:</h2>
-         {{wind_kph}} Km/h
-      </div>
+    <div class="grid justify-center grid-cols-1">
+ 
+       <h2 class="text-lg">Temperatura:
+     {{temp_c}} ºC
 
-    <div id='caixinhas'>
-        <h2>Amanhecer:</h2>
-        {{sunrise}} ºC
-    </div>
+        <h2 class="text-lg">Data:</h2>
+    {{localtime}}
 
-    <div id='caixinhas'>
-        <h2>Pôr do sol:</h2>
-        {{sunset}}
-    </div>
+         <h2 class="text-lg">Sensação térmica</h2>
+    {{feelslike_c}} ºC
 
-    <div id='caixinhas'>
-        <h2>Mínima:</h2>
-        {{mintemp_c}} ºC
-    </div>
 
-    <div id='caixinhas'>
-        <h2>Máxima Vento:</h2>
-        {{maxwind_kph}} Km/h
-    </div>
+        <h2 class="text-lg">Máxima</h2>
+    {{maxtemp_c}} ºC
 
-    <div id='caixinhas'>
-      <h2>Mínima Vento:</h2>
-      {{minwind_kph}} Km/h
-    </div>
+        <h2 class="text-lg">Umidade</h2>
+    {{avghumidity}} kg/m³
 
-    <div id='caixinhas'>
-      <h2>País:</h2>
-      {{country}}
-    </div>
+        <h2 class="text-lg">Vento:</h2>
+    {{wind_kph}} Km/h
+  
+        <h2 class="text-lg">Amanhecer:</h2>
+    {{sunrise}} ºC
 
-    <div id='caixinhas'>
-       <h2>Fuso Horário:</h2>
-      {{tz_id}}
+        <h2 class="text-lg">Pôr do sol:</h2>
+    {{sunset}}
 
-    </div>
-</div>
-</div>
+        <h2 class="text-lg">Mínima:</h2>
+    {{mintemp_c}} ºC
+
+        <h2 class="text-lg">Máxima Vento:</h2>
+    {{maxwind_kph}} Km/h
+
+        <h2 class="text-lg">Mínima Vento:</h2>
+    {{minwind_kph}} Km/h
+
+         <h2 class="text-lg">País:</h2>
+    {{country}}
+
+         <h2 class="text-lg">Fuso Horário:</h2>
+    {{tz_id}}
+</h2>
+
+              </div>
+        </div>
 </div>
 
 </template>
@@ -74,11 +76,15 @@ export default defineComponent ({
     return {
       name: [],
       region: [],
+      feelslike_c: [],
+      temp_c: [],
+      localtime: [],
+      maxtemp_c: [],
+      avghumidity: [],
       wind_kph: [],
       sunset: [],
       sunrise: [],
       mintemp_c: [],
-      avghumidity: [],
       maxwind_kph: [],
       minwind_kph: [],
       country: [],
@@ -104,6 +110,11 @@ methods: {
         this.minwind_kph = response.data.forecast.forecastday[0].day.minwind_kph;
         this.country = response.data.location.country;
         this.tz_id = response.data.location.tz_id;
+        this.temp_c = response.data.current.temp_c;
+        this.localtime = response.data.location.localtime;
+        this.feelslike_c = response.data.current.feelslike_c;
+        this.avghumidity = response.data.forecast.forecastday[0].day.avghumidity;
+        this.maxtemp_c = response.data.forecast.forecastday[0].day.maxtemp_c;
       })
       .catch(error => {
         alert(error)
@@ -138,30 +149,9 @@ h1 {
 
 h2 {
   color: dark;
-  font-family: verdana;
-  font-size: 90%;
-  width: auto;
-  text-align: center;
-}
-
-h3 {
-  color: dark;
+  font-size: 200%;
   font-style: italic;
   font-family: verdana;
 }
 
-
-#caixinhas {
-  background-image: linear-gradient(to bottom right, #C3C3C3, #6A9FDE);
-  border-radius: 15px;
-  padding-top: 30px;
-  padding-right: 0px;
-  padding-bottom: 30px;
-  padding-left: 0px;
-  height: auto;
-  width: 40%;
-  text-align: center;
-  color: dark;
-  font-size: large;
-}
 </style>

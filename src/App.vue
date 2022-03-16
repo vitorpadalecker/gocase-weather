@@ -1,30 +1,40 @@
 <template>
+<div class="items-center h-screen bg-light">
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Início</router-link> |
+    <router-link to="/about">Detalhes</router-link> |
+    <router-link to="/conteudo">Lista</router-link>
   </nav>
   <router-view/>
+  </div>
 </template>
 
 <style>
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: verdana;
+  color: #2c3e50;
+}
+#home {
+  font-family: verdana;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: dark;
 }
 
 nav {
   padding: 30px;
+  text-align: center;
+  align-content: center;
 }
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: darkest;
+  
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: escuro;
 }
 </style>
