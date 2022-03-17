@@ -5,6 +5,6 @@ module.exports = defineConfig({
 module.exports = {
   // options...
   devServer: {
-        proxy: 'https://gocase-weather.vercel.app/',
+        proxy: 'gocase-weather',
     }
 }
