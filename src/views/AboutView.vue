@@ -6,7 +6,7 @@
     </div>
 
   <div class="p-2">
-      <div class="w-auto h-auto p-5 rounded-lg shadow-md bg-dark">
+      <div class="w-auto h-auto p-5 rounded-lg shadow-md bg-laranja">
         <div class="mb-4 text-lg text-center text-semibold">
         <div class="ml-4">
           <h3>
@@ -136,7 +136,7 @@ h1 {
 h2 {
   color: dark;
   font-family: verdana;
-  font-size: 90%;
+  font-size: 100%;
   width: auto;
   text-align: center;
 }
@@ -149,16 +149,16 @@ h3 {
 
 
 #caixinhas {
-  background-image: linear-gradient(to bottom right, #C3C3C3, #6A9FDE);
+  background-color: #1F1424;
   border-radius: 15px;
   padding-top: 30px;
   padding-right: 0px;
   padding-bottom: 30px;
   padding-left: 0px;
   height: auto;
-  width: 40%;
+  width: 25%;
   text-align: center;
-  color: dark;
-  font-size: large;
+  color: white;
+  font-size: larger;
 }
 </style>

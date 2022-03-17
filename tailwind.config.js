@@ -16,7 +16,7 @@ module.exports = {
             base: ['16px', '24px'],
             lg: ['20px', '28px'],
             xl: ['32px', '40px'],
-            xxl: ['130px', '138px']
+            xxl: ['250px', '258px']
           }
     },
   },

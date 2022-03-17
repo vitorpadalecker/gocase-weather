@@ -8,13 +8,13 @@
 <div class="p-2">
       <div class="w-auto h-auto p-5 rounded-lg shadow-md bg-dark">
         <div class="mb-4 text-lg text-center text-semibold">
-            <div class="ml-4">
+          
                 <h3>
                 {{ name }}
                       -
                 {{region}}
                 </h3>
-             </div>
+             
         </div>
 
     <div class="grid justify-center grid-cols-1">
@@ -145,10 +145,31 @@ h1 {
 }
 
 h2 {
-  color: dark;
-  font-size: 200%;
+  color: white;
+  font-size: 300%;
   font-style: italic;
   font-family: verdana;
+}
+
+h3 {
+  color: white;
+  font-size: 100%;
+  font-style: italic;
+  font-family: verdana;
+}
+
+#caixinhas {
+  background-color: #1F1424;
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-right: 0px;
+  padding-bottom: 30px;
+  padding-left: 0px;
+  height: auto;
+  width: 25%;
+  text-align: center;
+  color: white;
+  font-size: larger;
 }
 
 </style>
