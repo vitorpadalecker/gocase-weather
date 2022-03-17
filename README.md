@@ -26,8 +26,8 @@ npm run build
  Vercel Link: https://gocase-weather.vercel.app/#/
  
  ## To-do:
- - Add a functional player, so you can play a song.
- - Add a search bar so it filters the artists and songs.
+ - Add a smoother home page.
+ - Add information page about the weather.
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
