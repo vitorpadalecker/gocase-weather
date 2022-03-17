@@ -1,7 +1,7 @@
 {
-    "https://gocase-weather.vercel.app/#/": "insideblock",
-    "routes": [
-      { "handle": "filesystem" },
-      { "src": "/(.*)", "status": 404, "dest": "/404.html" }
-    ]
-  }
+  "name": "gocase-weather",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+  ]
+}
