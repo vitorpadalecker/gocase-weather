@@ -134,7 +134,7 @@ h1 {
 }
 
 h2 {
-  color: dark;
+  color: white;
   font-family: verdana;
   font-size: 100%;
   width: auto;
@@ -142,7 +142,7 @@ h2 {
 }
 
 h3 {
-  color: dark;
+  color: #1F1424;
   font-style: italic;
   font-family: verdana;
 }
