@@ -1,10 +1,8 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true
-})
 module.exports = {
-  // options...
-  devServer: {
-        proxy: 'gocase-weather',
-    }
-}
+  configureWebpack: {
+    devServer: {
+      headers: { "Access-Control-Allow-Origin": "*"},
+      proxy: "http://api.weatherapi.com/v1/forecast.json",
+    },
+  },
+};
