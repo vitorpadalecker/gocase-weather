@@ -105,7 +105,9 @@ methods: {
         this.country = response.data.location.country;
         this.tz_id = response.data.location.tz_id;
       })
-      
+      .catch(error => {
+        alert(error)
+      })
       
       console.log(this.txtInput)
     }
@@ -119,7 +121,9 @@ methods: {
         this.name = response.data.location.name;
         console.log(this.name)
       })
-      
+      .catch(error => {
+        alert(error)
+      })
   }
 });
 </script>
