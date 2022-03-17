@@ -81,9 +81,7 @@ methods: {
         this.avghumidity = response.data.forecast.forecastday[0].day.avghumidity;
         this.maxtemp_c = response.data.forecast.forecastday[0].day.maxtemp_c;
       })
-      .catch(error => {
-        alert(error)
-      })
+      
       
       console.log(this.txtInput)
     }
@@ -97,9 +95,7 @@ methods: {
         this.name = response.data.location.name;
         console.log(this.name)
       })
-      .catch(error => {
-        alert(error)
-      })
+      
   }
 });
 </script>
