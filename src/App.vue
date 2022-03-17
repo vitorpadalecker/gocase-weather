@@ -1,16 +1,17 @@
 <template>
-<div class="items-center h-screen bg-light">
+<div class="items-center h-screen bg-azul">
+  <div class="p-1">
+      <div class="w-auto h-auto rounded-lg shadow-md bg-laranja">
   <nav>
-    <router-link to="/">Início</router-link> |
-    <router-link to="/about">Detalhes</router-link> |
-    <router-link to="/conteudo">Lista</router-link>
+    <router-link class="text-lg text-center text-semibold" to="/">Início</router-link> |
+    <router-link class="text-lg text-center text-semibold" to="/about">Detalhes</router-link> |
+    <router-link class="text-lg text-center text-semibold" to="/conteudo">Lista</router-link>
   </nav>
   <router-view/>
-  </div>
+  </div></div></div>
 </template>
 
 <style>
-
 #app {
   font-family: verdana;
   color: #2c3e50;

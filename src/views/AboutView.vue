@@ -108,8 +108,6 @@ methods: {
       .catch(error => {
         alert(error)
       })
-      
-      console.log(this.txtInput)
     }
 },
   
@@ -119,7 +117,6 @@ methods: {
     axios.get(baseURL+"q=brazil")
       .then(response => {
         this.name = response.data.location.name;
-        console.log(this.name)
       })
       .catch(error => {
         alert(error)

@@ -1,47 +1,36 @@
 <template>
-    <div class="text-center">
+<div class="p-2">
+      <div class="w-auto h-auto p-2 rounded-lg bg-laranja">
+    <div class="mb-3 text-lg text-center text-semibold">
+  
        <h1 class="mb-2 text-xl text-center">Digite sua cidade:</h1>
-       <input id="txtName" @keyup.enter="addMessage" v-model="txtInput" type="text" class="px-5 py-1 border rounded bg-darkest hover:border-escuro border-dark">
-    </div>
-
-    <div class="p-2">
-      <div class="w-auto h-auto p-5 rounded-lg shadow-md bg-dark">
-    <div class="mb-4 text-lg text-center text-semibold">
-       <div class="ml-4">
+       <input id="txtName" @keyup.enter="addMessage" v-model="txtInput" type="text" class="px-5 py-1 mb-2 border rounded bg-darkest hover:border-escuro border-dark">
+      
          <h3>
          {{ name }}
          -
         {{region}}
         </h3>
- </div>
 </div>
 
-  <div class="flex flex-wrap justify-center">   
-    <div id='caixinhas'>
-      <h2>Temperatura:</h2>
-         {{temp_c}} ºC
-    </div>
-
+<div id='temperatura' class="flex flex-wrap items-center justify-center text-center">
+        <h2>Temperatura:</h2>
+         <h4 class="text-xxl">{{temp_c}}</h4> ºC
+   
     <div id='caixinhas'>
      <h2>Data:</h2>
         {{localtime}}
-    </div>
-
-    <div id='caixinhas'>
+    
       <h2>Sensação térmica</h2>
         {{feelslike_c}} ºC
-    </div>
-
-    <div id='caixinhas'>
+    
      <h2>Máxima</h2>
        {{maxtemp_c}} ºC
-    </div>
 
-    <div id='caixinhas'>
      <h2>Umidade</h2>
       {{avghumidity}} kg/m³
-    </div>
 
+    </div>
 </div>
 </div>
 </div>
@@ -72,7 +61,8 @@ methods: {
       const baseURL = "http://api.weatherapi.com/v1/forecast.json?key=bd48aaabe89a4b1d83c02411221603&"
 
     axios.get(baseURL+"q="+this.txtInput)
-      .then(response => {
+      .then(response =>
+       {
         this.name = response.data.location.name;
         this.region = response.data.location.region;
         this.temp_c = response.data.current.temp_c;
@@ -84,8 +74,6 @@ methods: {
       .catch(error => {
         alert(error)
       })
-      
-      console.log(this.txtInput)
     }
 },
   
@@ -95,7 +83,6 @@ methods: {
     axios.get(baseURL+"q=brazil")
       .then(response => {
         this.name = response.data.location.name;
-        console.log(this.name)
       })
       .catch(error => {
         alert(error)
@@ -113,31 +100,43 @@ h1 {
 }
 
 h2 {
-  color: white;
+  color: dark;
   font-family: verdana;
-  font-size: 90%;
   width: auto;
   text-align: center;
 }
 
+h4 {
+  color: dark;
+  font-family: verdana;
+  text-align: center;
+}
+
 h3 {
-  color: white;
+  color: dark;
   font-style: italic;
   font-family: verdana;
 }
 
 
 #caixinhas {
-  background-image: linear-gradient(to bottom right, #C3C3C3, #6A9FDE);
-  border-radius: 15px;
-  padding-top: 30px;
-  padding-right: 0px;
-  padding-bottom: 30px;
-  padding-left: 0px;
   height: auto;
-  width: 40%;
+  width: auto;
   text-align: center;
-  color: white;
+  justify-content: center;
+  color: dark;
+  font-size: large;
+}
+#temperatura {
+  display:flex;
+  flex-direction:row;
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: -0.05em;
+  color: dark;
   font-size: large;
 }
 </style>
